@@ -4,50 +4,86 @@ import { motion, useInView } from "framer-motion";
 
 const EVENTS = [
   {
-    date: "The Beginning",
-    title: "The First Hello",
-    desc: "It began with a simple message — one that neither of us knew would change everything. That first conversation felt like finding a piece of a puzzle you didn't know was missing.",
-    img: "/photos/photo-2.png",
-    icon: "💬",
+    title: "Always Smiling",
+    desc: "Your smile has always been my favorite.",
+    img: "/photos/always%20smiling.png",
+    icon: "😊",
     side: "left" as const,
   },
   {
-    date: "12 February 2025",
-    title: "Our Story Began ❤️",
-    desc: "A day filled with honesty and warmth. We chose each other, and everything felt right. This is the day our beautiful journey together truly started.",
-    img: "/photos/photo-1.png",
-    icon: "❤️",
+    title: "Beautiful You",
+    desc: "Just being yourself is more than enough.",
+    img: "/photos/pretty%20as%20you%20are.png",
+    icon: "✨",
     side: "right" as const,
   },
   {
-    date: "Spring 2025",
-    title: "First Adventures",
-    desc: "Exploring places together for the first time — every street, every café, every shared meal felt like discovering the world anew. You made ordinary places magical.",
-    img: "/photos/photo-6.jpg",
-    icon: "✈️",
+    title: "Our First Date",
+    desc: "The day everything started to feel different.",
+    img: "/photos/first%20date%20(1).png",
+    icon: "❤️",
     side: "left" as const,
   },
   {
-    date: "Summer 2025",
-    title: "Sunsets & Memories",
-    desc: "Late evenings watching sunsets, long calls under the stars, moments that we pressed between the pages of memory to keep forever. This was the summer of us.",
-    img: "/photos/photo-4.png",
+    title: "A Walk Together",
+    desc: "Every little moment became a beautiful memory.",
+    img: "/photos/first%20date%20(2).png",
+    icon: "🌿",
+    side: "right" as const,
+  },
+  {
+    title: "Our First Selfie",
+    desc: "A simple picture, an unforgettable moment.",
+    img: "/photos/first.jpg",
+    icon: "📸",
+    side: "left" as const,
+  },
+  {
+    title: "Happy Together",
+    desc: "Happiness always feels better with you.",
+    img: "/photos/happy%20together.jpg",
+    icon: "☀️",
+    side: "right" as const,
+  },
+  {
+    title: "Lovely Idiots",
+    desc: "Still making each other laugh every day.",
+    img: "/photos/lovely%20idoits.jpg",
+    icon: "😄",
+    side: "left" as const,
+  },
+  {
+    title: "Better Days",
+    desc: "Every day got brighter because of you.",
+    img: "/photos/better%20day.jpg",
     icon: "🌅",
     side: "right" as const,
   },
   {
-    date: "Late 2025",
-    title: "Nights to Remember",
-    desc: "Under fairy lights and the glow of our hearts, we built a world that was entirely ours. Inside jokes, playlists, late nights — a beautiful ordinary life.",
-    img: "/photos/photo-8.jpg",
-    icon: "✨",
+    title: "Just Us",
+    desc: "Being silly together is our favorite hobby.",
+    img: "/photos/silly%20together.jpg",
+    icon: "🤪",
     side: "left" as const,
   },
   {
-    date: "Forever →",
-    title: "Every Day After",
-    desc: "The story isn't finished. Every day is a new page, and I can't wait to see what we write next. With you, every chapter is my favorite.",
-    img: "/photos/photo-10.jpg",
+    title: "Goofy Moments",
+    desc: "The little moments make the best memories.",
+    img: "/photos/sillyy.png",
+    icon: "🤍",
+    side: "right" as const,
+  },
+  {
+    title: "Forever Us",
+    desc: "Home is wherever you're in my arms.",
+    img: "/photos/together.png",
+    icon: "🏡",
+    side: "left" as const,
+  },
+  {
+    title: "Still Smiling",
+    desc: "And this is only the beginning of our story.",
+    img: "/photos/WIN_20260416_11_26_01_Pro.jpg",
     icon: "🌟",
     side: "right" as const,
   },
@@ -73,7 +109,7 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
           style={{ boxShadow: "0 8px 30px rgba(255,94,156,0.1)", border: "1px solid rgba(255,180,215,0.3)" }}
         >
           {/* Image */}
-          <div className="relative h-48 w-full">
+          <div className="relative h-56 w-full">
             <img src={event.img} alt={event.title} className="w-full h-full object-cover" />
             <div
               className="absolute inset-0"
@@ -90,9 +126,6 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
 
           {/* Content */}
           <div className="p-6">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "var(--pink)" }}>
-              {event.date}
-            </p>
             <h3 className="font-serif text-xl font-semibold mb-2" style={{ color: "var(--text)" }}>
               {event.title}
             </h3>
