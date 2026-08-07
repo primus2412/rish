@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ────────────────────────────────────────── */
+:root {
+  --bg:          #FFF9FB;
+  --bg-hero:     #FFF0F5;
+  --pink:        #FF5E9C;
+  --pink-light:  #FFB3D1;
+  --pink-soft:   #FFE4EF;
+  --rose:        #FF8AB4;
+  --lavender:    #E9D5FF;
+  --lavender-mid:#C4B5FD;
+  --gold:        #F4C542;
+  --gold-light:  #FAE08A;
+  --text:        #2C2C2C;
+  --text-muted:  #6B7280;
+  --text-light:  #9CA3AF;
+  --glass-bg:    rgba(255,255,255,0.65);
+  --glass-border:rgba(255,180,215,0.35);
+  --glass-shadow:0 8px 32px rgba(255,94,156,0.12);
+  --radius-xl:   1.5rem;
+  --radius-2xl:  2rem;
+}
+
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--pink-soft); }
+::-webkit-scrollbar-thumb { background: var(--pink-light); border-radius: 999px; }
+
+/* ─── Typography ───────────────────────────────────────────── */
+.font-script   { font-family: var(--font-dancing), cursive; }
+.font-serif    { font-family: var(--font-cormorant), serif; }
+.font-pinyon   { font-family: var(--font-pinyon), cursive; }
+.font-body     { font-family: var(--font-inter), sans-serif; }
+
+/* ─── Glass Morphism ───────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-dark {
+  background: rgba(255, 230, 242, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 140, 180, 0.3);
+  box-shadow: 0 12px 48px rgba(255, 94, 156, 0.18);
+}
+
+/* ─── Gradients ────────────────────────────────────────────── */
+.gradient-hero {
+  background: linear-gradient(135deg, #FFF0F5 0%, #F5E8FF 40%, #FFF9E8 100%);
+}
+.gradient-pink {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--rose) 100%);
+}
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, #F7A800 100%);
+}
+.gradient-text {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--lavender-mid) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Animated Blobs ───────────────────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: blobFloat 8s ease-in-out infinite alternate;
+}
+@keyframes blobFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-15px, 25px) scale(0.97); }
+  100% { transform: translate(20px, -10px) scale(1.02); }
+}
+
+/* ─── Keyframe Animations ──────────────────────────────────── */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.15); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.1); }
+  70%       { transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,94,156,0.4), 0 0 40px rgba(255,94,156,0.2); }
+  50%       { box-shadow: 0 0 30px rgba(255,94,156,0.7), 0 0 60px rgba(255,94,156,0.4); }
+}
+@keyframes ripple {
+  to { transform: scale(3.5); opacity: 0; }
+}
+@keyframes countdown-pulse {
+  0%, 100% { transform: scale(1); color: var(--pink); }
+  50%       { transform: scale(1.08); color: var(--rose); }
+}
+@keyframes drawLine {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes eqAnim {
+  from { transform: scaleY(0.2); }
+  to   { transform: scaleY(1); }
+}
+
+/* ─── Utility Classes ──────────────────────────────────────── */
+.anim-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+.anim-float     { animation: float 4s ease-in-out infinite; }
+.anim-glow      { animation: glowPulse 2s ease-in-out infinite; }
+.anim-fadeInUp  { animation: fadeInUp 0.8s ease-out forwards; }
+
+.section-pad { padding: 5rem 1.5rem; }
+@media (min-width: 768px) { .section-pad { padding: 7rem 2rem; } }
+
+.section-title {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.divider-heart {
+  display: flex; align-items: center; gap: 1rem;
+  color: var(--pink-light); font-size: 1.1rem;
+}
+.divider-heart::before, .divider-heart::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink-light), transparent);
+}
+
+/* ─── Button Styles ────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--rose) 100%);
+  color: white;
+  border: none; border-radius: 999px;
+  font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(255,94,156,0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(255,94,156,0.5);
+}
+.btn-primary:active { transform: scale(0.97); }
+
+/* ─── Image Hover ──────────────────────────────────────────── */
+.img-hover-glow {
+  transition: transform 0.4s ease, box-shadow 0.4s;
+}
+.img-hover-glow:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 30px rgba(255,94,156,0.4), 0 12px 40px rgba(255,94,156,0.15);
+}
+
+/* ─── Lightbox ─────────────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(20,10,15,0.92);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ─── Music Player ─────────────────────────────────────────── */
+.vinyl-spin { animation: spin 4s linear infinite; }
+.eq-bar {
+  width: 3px; border-radius: 2px;
+  background: linear-gradient(to top, var(--pink), var(--gold));
+  animation: eqAnim 0.8s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+/* ─── Surprise Section ─────────────────────────────────────── */
+.surprise-bg {
+  background: radial-gradient(ellipse at center, #3D0A1F 0%, #1A0510 60%, #0D0308 100%);
+}
+
+/* ─── Number Counter ───────────────────────────────────────── */
+.counter-num {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Selection ────────────────────────────────────────────── */
+::selection { background: var(--pink-soft); color: var(--pink); }
