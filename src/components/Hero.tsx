@@ -68,7 +68,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase glass shadow-sm"
             style={{ color: "var(--pink)", border: "1px solid rgba(255,94,156,0.3)" }}
           >
-            ✦ Est. 12 February 2025 ✦
+            ✦ Est. 29 November 2025 ✦
           </span>
         </motion.div>
 
@@ -139,7 +139,7 @@ export default function Hero() {
             className="text-xs tracking-widest uppercase mt-1 block font-semibold text-center"
             style={{ color: "var(--pink-light)" }}
           >
-            — Maya Angelou
+            — Ishu
           </cite>
         </motion.div>
 

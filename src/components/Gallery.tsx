@@ -3,19 +3,23 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { id: "g1", src: "/photos/photo-5.jpg", alt: "Together Always", caption: "Our sweetest moment together", category: "Special" },
-  { id: "g2", src: "/photos/photo-8.jpg", alt: "Heart to Heart", caption: "My favorite place is right beside you", category: "Special" },
-  { id: "g3", src: "/photos/photo-6.jpg", alt: "Our Adventures", caption: "Exploring new paths hand in hand", category: "Travels" },
-  { id: "g4", src: "/photos/photo-7.jpg", alt: "Cozy Time", caption: "Warmth in every moment we share", category: "Travels" },
-  { id: "g5", src: "/photos/photo-1.png", alt: "Golden Moments", caption: "Our golden hour together", category: "First Dates" },
-  { id: "g6", src: "/photos/photo-2.png", alt: "Sweet Smile", caption: "Your smile brightens every day", category: "Memories" },
-  { id: "g7", src: "/photos/photo-3.png", alt: "Precious Togetherness", caption: "Holding onto every moment with you", category: "Special" },
-  { id: "g8", src: "/photos/photo-4.png", alt: "Quiet Evening", caption: "Watching the stars and sharing dreams", category: "Memories" },
-  { id: "g9", src: "/photos/photo-9.jpg", alt: "Everyday Magic", caption: "Making ordinary days feel extraordinary", category: "Memories" },
-  { id: "g10", src: "/photos/photo-10.jpg", alt: "Forever & Always", caption: "Just us, today and forever", category: "Special" },
+  { id: "g1", src: "/photos/WIN_20260416_11_26_01_Pro.jpg", alt: "Special Moment", caption: "Our special moment together", category: "First Date" },
+  { id: "g2", src: "/photos/first%20date%20(1).png", alt: "First Date 1", caption: "Unforgettable first date memory", category: "First Date" },
+  { id: "g3", src: "/photos/first%20date%20(2).png", alt: "First Date 2", caption: "Walking together on our first date", category: "First Date" },
+  { id: "g4", src: "/photos/first%20date%20(1).png", alt: "Travel Memory 1", caption: "Our first trip and journey together", category: "Travels" },
+  { id: "g5", src: "/photos/first%20date%20(2).png", alt: "Travel Memory 2", caption: "Beautiful stroll on our travels", category: "Travels" },
+  { id: "g6", src: "/photos/photo-6.jpg", alt: "Our Adventures", caption: "Exploring new paths hand in hand", category: "Travels" },
+  { id: "g7", src: "/photos/photo-7.jpg", alt: "Cozy Time", caption: "Warmth in every moment we share", category: "Travels" },
+  { id: "g8", src: "/photos/photo-8.jpg", alt: "Heart to Heart", caption: "My favorite place is right beside you", category: "Special" },
+  { id: "g9", src: "/photos/photo-1.png", alt: "Golden Moments", caption: "Our golden hour together", category: "Special" },
+  { id: "g10", src: "/photos/photo-2.png", alt: "Sweet Smile", caption: "Your smile brightens every day", category: "Memories" },
+  { id: "g11", src: "/photos/photo-3.png", alt: "Precious Togetherness", caption: "Holding onto every moment with you", category: "Special" },
+  { id: "g12", src: "/photos/photo-4.png", alt: "Quiet Evening", caption: "Watching the stars and sharing dreams", category: "Memories" },
+  { id: "g13", src: "/photos/photo-9.jpg", alt: "Everyday Magic", caption: "Making ordinary days feel extraordinary", category: "Memories" },
+  { id: "g14", src: "/photos/photo-10.jpg", alt: "Forever & Always", caption: "Just us, today and forever", category: "Special" },
 ];
 
-const CATEGORIES = ["All", "First Dates", "Travels", "Special", "Memories"];
+const CATEGORIES = ["All", "First Date", "Travels", "Special", "Memories"];
 
 export default function Gallery() {
   const [filter, setFilter] = useState("All");

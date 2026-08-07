@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import dynamic from "next/dynamic";
 
 const LINES = [
   "I'll choose you,",
@@ -276,7 +275,7 @@ export default function Surprise() {
                 className="font-serif italic text-white/80"
                 style={{ fontSize: "clamp(1rem, 3vw, 1.4rem)" }}
               >
-                Happy Girlfriend&apos;s Day ❤️
+                Happy Birthday Love ❤️
               </motion.p>
 
               <motion.div

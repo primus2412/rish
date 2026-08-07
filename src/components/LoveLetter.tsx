@@ -3,46 +3,85 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const TABS = [
-  { id: "beginning", label: "Our Beginning" },
-  { id: "love", label: "Why I Love You" },
-  { id: "promise", label: "A Promise" },
+  { id: "letter", label: "My Letter ❤️" },
+  { id: "love", label: "Why I Love You 💗" },
+  { id: "promise", label: "A Promise 🤍" },
 ];
 
-const LETTER_CONTENT: Record<string, string[]> = {
-  beginning: [
-    "My Dearest Ishu,",
-    "",
-    "There are moments in life that arrive so quietly, yet change everything. The day I first met you was one of those moments — unremarkable on the surface, extraordinary in every other way.",
-    "",
-    "I remember your smile and the way your eyes held a whole universe of warmth and kindness. I didn't know then that I was meeting the person who would become my favorite chapter in this story called life.",
-    "",
-    "From that first conversation to every little moment since — each one has been a gift I didn't know I deserved.",
-  ],
-  love: [
-    "I love you for a thousand reasons,",
-    "",
-    "I love the way you find beauty in ordinary things — a cup of tea, a quiet afternoon, the sound of rain. I love how you care so deeply, how your heart is always open and genuine.",
-    "",
-    "I love your laughter — the kind that fills a room. I love your warmth, your honesty, and the way you make me feel safe just by being near. I love how you make ordinary days feel like celebrations.",
-    "",
-    "But most of all, I love you for being exactly, unapologetically you.",
-  ],
-  promise: [
-    "And this is my promise to you,",
-    "",
-    "I promise to be your calm in every storm, your laughter in every sadness. I promise to hold your hand through every chapter — the beautiful ones, the difficult ones, and all the ordinary ones in between.",
-    "",
-    "I promise to choose you, again and again, in a thousand small ways every single day.",
-    "",
-    "Today, tomorrow, and every day that comes after — you are my favorite person, my greatest adventure, my home.",
-    "",
-    "Yours, always & completely,",
-    "Rishu 💕",
-  ],
+const LETTER_CONTENT: Record<string, { title: string; subtitle?: string; lines: string[] }> = {
+  letter: {
+    title: "Love Letter ❤️",
+    subtitle: "To Rishu, from Ishu",
+    lines: [
+      "My Love ❤️",
+      "",
+      "There are so many things I want to say to you, but somehow words never feel enough.",
+      "",
+      "Thank you for being the person who never stopped believing in me, even when I struggled to believe in myself. You've supported me through so much, loved me in ways I never thought I deserved, and stayed by my side through everything.",
+      "",
+      "You make my life brighter just by being in it. Every call, every message, every little moment with you means more to me than you probably realize.",
+      "",
+      "And thank you for calling me that day. You may not know how much it meant to me, but it reminded me that no matter what happens, I have someone who truly cares about me. I'll always be grateful for that.",
+    ],
+  },
+  love: {
+    title: "Why I Love You 💗",
+    lines: [
+      "If someone asked me why I love you...",
+      "",
+      "I honestly don't think I'd have an answer.",
+      "",
+      "I don't know why I fell in love with you.",
+      "",
+      "I just know that I did.",
+      "",
+      "And I know that I love you more than anyone and everything else.",
+      "",
+      "I love your smile.",
+      "",
+      "I love your laugh.",
+      "",
+      "I love your beautiful eyes that I could get lost in forever.",
+      "",
+      "I love your cute little nose—especially your nose.",
+      "",
+      "I love your face.",
+      "",
+      "I love the way you care.",
+      "",
+      "I love your heart.",
+      "",
+      "I love your imperfections because they're a part of you.",
+      "",
+      "I love every little thing that makes you... you.",
+      "",
+      "There isn't one reason I love you.",
+      "",
+      "I love all of you.",
+      "",
+      "And if I had to choose again, in every lifetime, it would always be you.",
+      "",
+      "I love you.",
+      "",
+      "Always.",
+    ],
+  },
+  promise: {
+    title: "A Promise 🤍",
+    lines: [
+      "I know life won't always be easy.",
+      "",
+      "There will be days when we're happy, days when we're stressed, and days when emotions get the better of us. I know you get overwhelmed sometimes, and to be honest, sometimes you overwhelm me too. But that doesn't scare me, because I know we'll figure it out—together.",
+      "",
+      "I promise I'll stay by your side through the good days and the bad ones. I'll support you when you need someone to lean on, listen when you need to be heard, and remind you how amazing you are whenever you forget.",
+      "",
+      "Thank you for coming into my life. Having you is one of the greatest blessings I've ever received, and I'll never take that for granted.",
+    ],
+  },
 };
 
 export default function LoveLetter() {
-  const [activeTab, setActiveTab] = useState("beginning");
+  const [activeTab, setActiveTab] = useState("letter");
   const [isRevealing, setIsRevealing] = useState(false);
   const [revealKey, setRevealKey] = useState(0);
 
@@ -53,7 +92,7 @@ export default function LoveLetter() {
     setTimeout(() => setIsRevealing(false), 200);
   };
 
-  const lines = LETTER_CONTENT[activeTab] || [];
+  const current = LETTER_CONTENT[activeTab] || LETTER_CONTENT.letter;
 
   return (
     <section
@@ -68,17 +107,22 @@ export default function LoveLetter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <span className="text-sm tracking-widest uppercase" style={{ color: "var(--pink)" }}>
             ✦ Written from the heart ✦
           </span>
           <h2
             className="font-pinyon mt-3"
-            style={{ fontSize: "clamp(3rem, 8vw, 5rem)", color: "var(--text)" }}
+            style={{ fontSize: "clamp(3rem, 8vw, 4.5rem)", color: "var(--text)" }}
           >
-            Love Letter
+            {current.title}
           </h2>
+          {current.subtitle && (
+            <p className="font-serif italic text-lg mt-1" style={{ color: "var(--text-muted)" }}>
+              {current.subtitle}
+            </p>
+          )}
           <div className="divider-heart mt-4">
             <span>🌸</span>
           </div>
@@ -151,16 +195,16 @@ export default function LoveLetter() {
               style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.1rem)", color: "var(--text)" }}
             >
               {!isRevealing &&
-                lines.map((line, i) => (
+                current.lines.map((line, i) => (
                   <motion.p
                     key={`${revealKey}-${i}`}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
                     className={line === "" ? "h-2" : ""}
                     style={{
                       fontStyle: i === 0 ? "italic" : "normal",
-                      fontWeight: i === 0 ? 600 : i === lines.length - 1 ? 600 : 400,
+                      fontWeight: i === 0 ? 600 : i === current.lines.length - 1 ? 600 : 400,
                       color: i === 0 ? "var(--pink)" : "inherit",
                       fontSize: i === 0 ? "1.25em" : "inherit",
                     }}

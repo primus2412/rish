@@ -4,88 +4,44 @@ import { motion, useInView } from "framer-motion";
 
 const EVENTS = [
   {
-    title: "Always Smiling",
-    desc: "Your smile has always been my favorite.",
-    img: "/photos/always%20smiling.png",
-    icon: "😊",
+    date: "29 November 2025",
+    title: "The Beginning",
+    desc: "It all began with one unexpected phone call that brought us together and made us promise to keep each other accountable. Neither of us knew that this simple conversation would become the start of something beautiful.",
+    img: "/photos/first%20date%20(2).png",
+    icon: "📞",
     side: "left" as const,
   },
   {
-    title: "Beautiful You",
-    desc: "Just being yourself is more than enough.",
-    img: "/photos/pretty%20as%20you%20are.png",
-    icon: "✨",
-    side: "right" as const,
-  },
-  {
+    date: "30 November 2025",
     title: "Our First Date",
-    desc: "The day everything started to feel different.",
+    desc: "The day we finally met. Every smile, every conversation, and every little moment made this day unforgettable.",
     img: "/photos/first%20date%20(1).png",
     icon: "❤️",
-    side: "left" as const,
-  },
-  {
-    title: "A Walk Together",
-    desc: "Every little moment became a beautiful memory.",
-    img: "/photos/first%20date%20(2).png",
-    icon: "🌿",
     side: "right" as const,
   },
   {
-    title: "Our First Selfie",
-    desc: "A simple picture, an unforgettable moment.",
-    img: "/photos/first.jpg",
-    icon: "📸",
-    side: "left" as const,
-  },
-  {
-    title: "Happy Together",
-    desc: "Happiness always feels better with you.",
-    img: "/photos/happy%20together.jpg",
-    icon: "☀️",
-    side: "right" as const,
-  },
-  {
-    title: "Lovely Idiots",
-    desc: "Still making each other laugh every day.",
-    img: "/photos/lovely%20idoits.jpg",
-    icon: "😄",
-    side: "left" as const,
-  },
-  {
-    title: "Better Days",
-    desc: "Every day got brighter because of you.",
-    img: "/photos/better%20day.jpg",
-    icon: "🌅",
-    side: "right" as const,
-  },
-  {
-    title: "Just Us",
-    desc: "Being silly together is our favorite hobby.",
-    img: "/photos/silly%20together.jpg",
-    icon: "🤪",
-    side: "left" as const,
-  },
-  {
-    title: "Goofy Moments",
-    desc: "The little moments make the best memories.",
-    img: "/photos/sillyy.png",
-    icon: "🤍",
-    side: "right" as const,
-  },
-  {
-    title: "Forever Us",
-    desc: "Home is wherever you're in my arms.",
-    img: "/photos/together.png",
-    icon: "🏡",
-    side: "left" as const,
-  },
-  {
-    title: "Still Smiling",
-    desc: "And this is only the beginning of our story.",
+    date: "4 December 2025",
+    title: "Our First Kiss",
+    desc: "A moment we'll never forget. Just us, close to each other, creating a memory that will stay with us forever.",
     img: "/photos/WIN_20260416_11_26_01_Pro.jpg",
-    icon: "🌟",
+    icon: "💋",
+    side: "left" as const,
+  },
+  {
+    date: "5 January 2026",
+    title: "We Chose Us",
+    desc: "After a difficult moment, we talked, understood each other, and promised to never give up on us.",
+    img: "/photos/together.png",
+    icon: "🤝",
     side: "right" as const,
+  },
+  {
+    date: "22 January 2026",
+    title: "Closer Than Ever",
+    desc: "One of our happiest days together. We had never felt this close before.",
+    img: "/photos/first.jpg",
+    icon: "✨",
+    side: "left" as const,
   },
 ];
 
@@ -99,7 +55,7 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
       ref={ref}
       className="relative grid grid-cols-1 md:grid-cols-9 items-center mb-16 gap-6 md:gap-0"
     >
-      {/* Card Wrapper (takes left 4 columns or right 4 columns) */}
+      {/* Card Wrapper */}
       <div className={`col-span-1 md:col-span-4 ${isLeft ? "md:text-right" : "md:order-last"}`}>
         <motion.div
           initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
@@ -126,6 +82,9 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
 
           {/* Content */}
           <div className="p-6">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "var(--pink)" }}>
+              {event.date}
+            </p>
             <h3 className="font-serif text-xl font-semibold mb-2" style={{ color: "var(--text)" }}>
               {event.title}
             </h3>
@@ -136,7 +95,7 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
         </motion.div>
       </div>
 
-      {/* Center dot (middle column) */}
+      {/* Center dot */}
       <div className="col-span-1 md:col-span-1 flex justify-center z-10">
         <motion.div
           className="flex flex-col items-center"
@@ -153,7 +112,7 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
           >
             {event.icon}
           </div>
-          {/* Floating small hearts between events */}
+          {/* Floating small hearts */}
           {index < total - 1 && (
             <div className="hidden md:flex flex-col items-center gap-3 mt-4">
               {["💗", "💕", "💗"].map((h, i) => (
@@ -171,7 +130,7 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
         </motion.div>
       </div>
 
-      {/* Spacer (opposite side takes 4 columns) */}
+      {/* Spacer */}
       <div className="hidden md:block md:col-span-4" />
     </div>
   );
@@ -203,7 +162,7 @@ export default function Timeline() {
 
         {/* Timeline body */}
         <div className="relative" ref={lineRef}>
-          {/* Animated center line (desktop) */}
+          {/* Animated center line */}
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-pink-100" />
           <motion.div
             className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 w-px origin-top h-full"
