@@ -86,18 +86,18 @@ export default function Hero() {
           <span className="absolute bottom-6 left-6 text-xl opacity-25">✨</span>
           <span className="absolute bottom-6 right-6 text-xl opacity-25">✨</span>
 
-          {/* Hero Profile Photo Avatar */}
+          {/* Hero Profile Photo Avatar - Couple Together Photo */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1.5 shadow-xl"
+            className="relative w-36 h-36 md:w-44 md:h-44 rounded-full p-1.5 shadow-xl"
             style={{ background: "linear-gradient(135deg, var(--pink), var(--rose), var(--gold-light))" }}
           >
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white shadow-inner">
               <img
-                src="/photos/photo-1.png"
-                alt="Rishu & Ishu"
+                src="/photos/photo-5.jpg"
+                alt="Rishu & Ishu Together"
                 className="w-full h-full object-cover"
               />
             </div>

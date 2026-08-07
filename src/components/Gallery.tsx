@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { id: "g1", src: "/photos/photo-1.png", alt: "Golden Moments", caption: "Our golden hour together", category: "Special" },
-  { id: "g2", src: "/photos/photo-2.png", alt: "Sweet Smile", caption: "Your smile brightens every day", category: "Memories" },
-  { id: "g3", src: "/photos/photo-3.png", alt: "Precious Togetherness", caption: "Holding onto every moment with you", category: "Special" },
-  { id: "g4", src: "/photos/photo-4.png", alt: "Quiet Evening", caption: "Watching the stars and sharing dreams", category: "Memories" },
-  { id: "g5", src: "/photos/photo-5.jpg", alt: "Joyful Day", caption: "Laughter that warms the heart", category: "First Dates" },
-  { id: "g6", src: "/photos/photo-6.jpg", alt: "Our Adventures", caption: "Exploring new paths hand in hand", category: "Travels" },
-  { id: "g7", src: "/photos/photo-7.jpg", alt: "Cozy Time", caption: "Warmth in every moment we share", category: "Travels" },
-  { id: "g8", src: "/photos/photo-8.jpg", alt: "Heart to Heart", caption: "My favorite place is right beside you", category: "Special" },
+  { id: "g1", src: "/photos/photo-5.jpg", alt: "Together Always", caption: "Our sweetest moment together", category: "Special" },
+  { id: "g2", src: "/photos/photo-8.jpg", alt: "Heart to Heart", caption: "My favorite place is right beside you", category: "Special" },
+  { id: "g3", src: "/photos/photo-6.jpg", alt: "Our Adventures", caption: "Exploring new paths hand in hand", category: "Travels" },
+  { id: "g4", src: "/photos/photo-7.jpg", alt: "Cozy Time", caption: "Warmth in every moment we share", category: "Travels" },
+  { id: "g5", src: "/photos/photo-1.png", alt: "Golden Moments", caption: "Our golden hour together", category: "First Dates" },
+  { id: "g6", src: "/photos/photo-2.png", alt: "Sweet Smile", caption: "Your smile brightens every day", category: "Memories" },
+  { id: "g7", src: "/photos/photo-3.png", alt: "Precious Togetherness", caption: "Holding onto every moment with you", category: "Special" },
+  { id: "g8", src: "/photos/photo-4.png", alt: "Quiet Evening", caption: "Watching the stars and sharing dreams", category: "Memories" },
   { id: "g9", src: "/photos/photo-9.jpg", alt: "Everyday Magic", caption: "Making ordinary days feel extraordinary", category: "Memories" },
   { id: "g10", src: "/photos/photo-10.jpg", alt: "Forever & Always", caption: "Just us, today and forever", category: "Special" },
 ];
