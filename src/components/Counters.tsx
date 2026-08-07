@@ -41,11 +41,11 @@ function LoveStat({ emoji, value, label }: { emoji: string; value: string; label
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="glass rounded-2xl p-6 text-center"
+      className="glass rounded-2xl p-5 text-center flex flex-col items-center justify-center min-h-[130px]"
       style={{ boxShadow: "0 4px 20px rgba(255,94,156,0.1)" }}
     >
       <div className="text-3xl mb-2">{emoji}</div>
-      <div className="font-serif font-bold mb-1" style={{ fontSize: "1.75rem", color: "var(--pink)" }}>
+      <div className="font-serif font-bold mb-1" style={{ fontSize: "1.6rem", color: "var(--pink)" }}>
         {value}
       </div>
       <p className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>{label}</p>
@@ -90,6 +90,8 @@ export default function Counters() {
   const stats = [
     { emoji: "❤️", value: "49+", label: "Hours Connected" },
     { emoji: "💬", value: "9999+", label: "Sweet Messages" },
+    { emoji: "😂", value: "∞", label: "Laughs Shared" },
+    { emoji: "💕", value: "1", label: "Perfect Person" },
     { emoji: "🌙", value: "Every Day", label: "Nights Dreaming About You" },
   ];
 
@@ -163,7 +165,7 @@ export default function Counters() {
               By the numbers (approximately infinite)
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {stats.map((s) => (
               <LoveStat key={s.label} {...s} />
             ))}
