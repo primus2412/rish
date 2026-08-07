@@ -43,6 +43,69 @@ const EVENTS = [
     icon: "✨",
     side: "left" as const,
   },
+  {
+    title: "Always Smiling",
+    desc: "Your smile has always been my favorite.",
+    img: "/photos/always%20smiling.png",
+    icon: "😊",
+    side: "right" as const,
+  },
+  {
+    title: "Beautiful You",
+    desc: "Just being yourself is more than enough.",
+    img: "/photos/pretty%20as%20you%20are.png",
+    icon: "✨",
+    side: "left" as const,
+  },
+  {
+    title: "Happy Together",
+    desc: "Happiness always feels better with you.",
+    img: "/photos/happy%20together.jpg",
+    icon: "☀️",
+    side: "right" as const,
+  },
+  {
+    title: "Lovely Idiots",
+    desc: "Still making each other laugh every day.",
+    img: "/photos/lovely%20idoits.jpg",
+    icon: "😄",
+    side: "left" as const,
+  },
+  {
+    title: "Better Days",
+    desc: "Every day got brighter because of you.",
+    img: "/photos/better%20day.jpg",
+    icon: "🌅",
+    side: "right" as const,
+  },
+  {
+    title: "Just Us",
+    desc: "Being silly together is our favorite hobby.",
+    img: "/photos/silly%20together.jpg",
+    icon: "🤪",
+    side: "left" as const,
+  },
+  {
+    title: "Goofy Moments",
+    desc: "The little moments make the best memories.",
+    img: "/photos/sillyy.png",
+    icon: "🤍",
+    side: "right" as const,
+  },
+  {
+    title: "Forever Us",
+    desc: "Home is wherever you're in my arms.",
+    img: "/photos/together.png",
+    icon: "🏡",
+    side: "left" as const,
+  },
+  {
+    title: "Still Smiling",
+    desc: "And this is only the beginning of our story.",
+    img: "/photos/WIN_20260416_11_26_01_Pro.jpg",
+    icon: "🌟",
+    side: "right" as const,
+  },
 ];
 
 function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index: number; total: number }) {
@@ -82,9 +145,11 @@ function TimelineCard({ event, index, total }: { event: typeof EVENTS[0]; index:
 
           {/* Content */}
           <div className="p-6">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "var(--pink)" }}>
-              {event.date}
-            </p>
+            {event.date && (
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "var(--pink)" }}>
+                {event.date}
+              </p>
+            )}
             <h3 className="font-serif text-xl font-semibold mb-2" style={{ color: "var(--text)" }}>
               {event.title}
             </h3>
